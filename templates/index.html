@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+   <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   </head>
+   <body>
+      <div class="container">
+         <div class="jumbotron">
+            <h1>Mission to Mars</h1>
+            <a href="/scrape" class="btn btn-primary">Scrape New Data</a>
+         </div>
+         <div>
+            <h3>{{ mars_data.news_title }}</h3>
+            <p>{{ mars_data.news_p }}</p>
+         </div>
+         <div class="row">
+            <div class="col">
+               <img src="{{ mars_data.featured_image_url }}">
+            </div>
+            <div class="col">
+               <div class="row border">
+                  <h4>Current Weather on Mars</h4>
+                  <div>{{ mars_data.mars_weather }}</div>
+               </div>
+               <div class="row">{{ mars_data.mars_html_table|safe }}</div>
+            </div>
+         </div>
+         <div class="row">
+           <h3>Mars  hemispheres</h3> 
+         </div>
+         <div>
+            <div class="border" style="float:left;">
+               <div>
+                  <img src="{{ mars_data.hemispheres[0].img_url }}" width="480px">
+               </div>
+               <div style="font-weight: bold;">{{ mars_data.hemispheres[0].title }}</div>
+            </div>
+            <div class="border" style="float:left;">
+               <div>
+                  <img src="{{ mars_data.hemispheres[1].img_url }}" width="480px">
+               </div>
+               <div style="font-weight: bold;">{{ mars_data.hemispheres[1].title }}</div>
+            </div>
+            <div class="border" style="float:left;">
+               <div>
+                     <img src="{{ mars_data.hemispheres[2].img_url }}" width="480px">
+               </div>
+               <div style="font-weight: bold;">{{ mars_data.hemispheres[2].title }}</div>
+            </div>
+            <div class="border" style="float:left;">
+               <div>
+                  <img src="{{ mars_data.hemispheres[3].img_url }}" width="480px">
+               </div>
+               <div style="font-weight: bold;">{{ mars_data.hemispheres[2].title }}</div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+
+<!--
+mars_data = {
+   "news_title": news_title,
+   "news_p": news_p,
+   "mars_images": mars_images,
+   "featured_image_url": featured_image_url,
+   "mars_weather": mars_weather,
+   "mars_html_table": mars_html_table,
+   "hemispheres": hemispheres
+}-->
