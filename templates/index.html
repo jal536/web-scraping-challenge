@@ -9,6 +9,7 @@
             <h1>Mission to Mars</h1>
             <a href="/scrape" class="btn btn-primary">Scrape New Data</a>
          </div>
+         {% if mars_data %}
          <div>
             <h3>{{ mars_data.news_title }}</h3>
             <p>{{ mars_data.news_p }}</p>
@@ -54,6 +55,7 @@
                <div style="font-weight: bold;">{{ mars_data.hemispheres[2].title }}</div>
             </div>
          </div>
+         {% endif %}
       </div>
    </body>
 </html>
